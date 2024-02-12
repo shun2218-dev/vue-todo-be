@@ -1,0 +1,43 @@
+{
+  "name": "full-stack-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init": "tsc --init",
+    "dev": "nodemon server.ts",
+    "build": "webpack",
+    "watch": "webpack -w",
+    "serve": "nodemon server.ts",
+    "db:edited": "npx prisma generate && cp -f ./prisma/schema.prisma ../frontend/prisma/schema.prisma && cd ../frontend && npx prisma generate",
+    "db:reset": "npx prisma db push --accept-data-loss --schema=./prisma/reset.prisma",
+    "db:create": "npx prisma db push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "eslint": "^8.56.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.0.2",
+    "prisma": "^5.7.1",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.7.1",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
